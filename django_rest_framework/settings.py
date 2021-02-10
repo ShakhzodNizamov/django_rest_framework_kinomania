@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'ckeditor',
     'ckeditor_uploader',
-    'kinoman'
+    'kinoman',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -127,7 +128,6 @@ STATICFILES_DIRS = [STATIC_DIR]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_CONFIGS = {
     'default': {
@@ -193,4 +193,10 @@ CKEDITOR_CONFIGS = {
             'youtube'
         ]),
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
