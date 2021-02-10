@@ -3,7 +3,7 @@ from django import forms
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Category, Genre, Movie, MovieShots, Actor, Rating, Review
+from .models import Category, Genre, Movie, MovieShots, Actor, Rating, Review, RatingStar
 
 
 class MovieAdminForm(forms.ModelForm):
@@ -148,6 +148,8 @@ class MovieShotsAdmin(admin.ModelAdmin):
     get_image.short_description = "Изображение"
 
 
+admin.site.register(RatingStar)
+
 admin.site.site_title = "Django Movies"
 admin.site.site_header = "Django Movies"
 
@@ -158,5 +160,3 @@ admin.site.site_header = "Django Movies"
 # admin.site.register(Actor)
 # admin.site.register(Rating)
 # admin.site.register(Review)
-
-
